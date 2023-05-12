@@ -1,0 +1,10 @@
+<div class="container">
+     <div class="card" [ngStyle]="{'background-color': isBackGround == false ? 'rgb(164, 169, 228)' : 'red'}">
+      <img *ngIf="isVisible" [src]="loginImage" [alt]="loginAltAttr" [width]="loginImageWidth" [height]="loginImageHeight">
+      <span>Login</span>
+        <input [placeholder]="loginInputEmailPlaceholder" type="text">
+      <input (input)="getValue($event)" [placeholder]="loginPassPlaceholder" type="text">
+      <button style="width: 100px;height: 20px;margin-top: 10px;"> {{ loginBtnName }} </button>
+      <button (click)="forgotPassword()">{{ forgotPassBtnName }}</button>
+    </div>
+</div>
