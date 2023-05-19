@@ -1,0 +1,57 @@
+<mat-toolbar style="height: 10vh;">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Check voice mail</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Disable alerts</span>
+                </button>
+              </mat-menu>
+            <a href="#"><img width="150" src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"
+                    alt=""></a>
+            <a mat-button style="border-radius: 50%;">About</a>
+            <a mat-button style="border-radius: 50%;">Product</a>
+            <a mat-button style="border-radius: 50%;">For Teams</a>
+
+
+            <mat-form-field id="search">
+                <mat-icon>search</mat-icon>
+                <input (keydown)="search($event)" [(ngModel)]="sourceName" id="search_input" type="search" matInput placeholder="Search...">
+            </mat-form-field>
+        </div>
+        <div>
+ 
+        </div>
+        <div class="d-flex " style="align-items: center;">
+<!--             <button mat-button
+                style="color: hsl(206deg 100% 52%);  border: 1px  solid ; width: 65px; height: 33px; padding: 8px 10px; margin-right: 4px;">
+                Log in
+            </button>
+            <button
+                style="background-color: hsl(206deg 100% 52%); width: 65px; height: 33px; padding: 8px 10px; font:  small-caption;"
+                mat-raised-button color="primary">
+                Sign up
+            </button> -->
+            <button routerLink="/auth/login" mat-icon-button style="width: 30px; "  [matTooltip]="logout">
+        
+                <mat-icon style="width: 30px;    position: relative;
+                left: -12px;">
+                    input
+                </mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+</mat-toolbar>

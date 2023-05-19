@@ -1,10 +1,29 @@
-<div class="container">
-     <div class="card" [ngStyle]="{'background-color': isBackGround == false ? 'rgb(164, 169, 228)' : 'red'}">
-      <img *ngIf="isVisible" [src]="loginImage" [alt]="loginAltAttr" [width]="loginImageWidth" [height]="loginImageHeight">
-      <span>Login</span>
-        <input [placeholder]="loginInputEmailPlaceholder" type="text">
-      <input (input)="getValue($event)" [placeholder]="loginPassPlaceholder" type="text">
-      <button style="width: 100px;height: 20px;margin-top: 10px;"> {{ loginBtnName }} </button>
-      <button (click)="forgotPassword()">{{ forgotPassBtnName }}</button>
+<div class="background">
+    <div class="container ">
+        <form class="d-flex justify-content-center">
+            <div style="width: 50%; height: 100vh;background-color:#7DCEA0; opacity: 0.95;box-shadow: 10px 10px 50px 5px rgb(255, 255, 255),-10px 10px 50px 5px rgb(255, 255, 255); border-radius: 10px;"
+                class="d-flex flex-column justify-content-center align-items-center">
+                <img class="img-fluid" width="300px" style="background-color:	#7DCEA0" src="assets/logo.png"
+                    alt="Sana Şifa">
+                <!--  <div class="d-flex flex-column align-items-center " style="border-radius: 3px;border: 1px solid  rgb(255, 255, 255); padding: 10px; background-color: rgb(164, 199, 180);"> -->
+                <h2 class="mb-3"><strong><b>Giriş</b></strong></h2>
+                <mat-form-field style="width: 400px;" appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="">
+                    <mat-icon matPrefix>mail</mat-icon>
+                </mat-form-field>
+                <mat-form-field style="width: 400px;" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="">
+
+                    <mat-icon matPrefix>key</mat-icon>
+                </mat-form-field>
+                <button (click)="clickLogin()"  mat-raised-button class="mb-2"><span>Giriş</span></button>
+                <button routerLink="/auth/forgot-password" color="primary" class="mb-3" mat-raised-button><span>Şifremi
+                        Unuttum</span></button>
+            </div>
+
+            <!-- </div> -->
+        </form>
     </div>
 </div>
