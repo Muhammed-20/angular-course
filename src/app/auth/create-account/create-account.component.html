@@ -28,12 +28,10 @@
                     </mat-error>
                     <mat-icon matPrefix>key</mat-icon>
                 </mat-form-field>
-                <button (click)="clickLogin()" [disabled]="loginForm.invalid" mat-raised-button class="mb-2 w-25"><span>Giriş</span></button>
-                <button routerLink="/auth/forgot-password" color="primary" class="mb-2 w-25" mat-raised-button><span>Şifremi
-                        Unuttum</span></button>
-                <button routerLink="/auth/create-account" color="warn" class="mb-2 w-25" mat-raised-button><span>Kayıt Ol</span></button>
+                <button (click)="createAccount()" [disabled]="loginForm.invalid" mat-raised-button class="mb-2 w-25" ><span>Kayıt ol</span></button>
+                <button routerLink="/auth/login" color="primary" class="mb-3 w-25" mat-raised-button><span>Giriş Ekranı</span></button>
+                
             </div>
-
             <!-- </div> -->
         </form>
     </div>

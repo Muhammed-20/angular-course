@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "mail": "levent@gmail.com",
+      "password": "Password1!",
+      "id": 1
+    },
+    {
+      "mail": "mujhamemd@gmail.com",
+      "password": "Password",
+      "id": 2
+    }
+  ],
+  "pass": [
+    {
+      "mail": "muhammedaliaksit",
+      "password": "123456",
+      "id": 1
+    }
+  ]
+}

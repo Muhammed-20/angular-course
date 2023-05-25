@@ -1,6 +1,6 @@
 <div class="background">
     <div class="container ">
-        <form  class="d-flex justify-content-center">
+        <form [formGroup]="loginForm" class="d-flex justify-content-center">
             <div style="width: 50%; height: 100vh;background-color:#7DCEA0; opacity: 0.95;box-shadow: 10px 10px 50px 5px rgb(255, 255, 255),-10px 10px 50px 5px rgb(255, 255, 255); border-radius: 10px;"
                 class="d-flex flex-column justify-content-center align-items-center">
                 <img class="img-fluid" width="300px" style="background-color:	#7DCEA0" src="assets/logo.png"
@@ -8,14 +8,32 @@
                 <h2 class="mb-3"><strong><b translate>Parolamı Unuttum</b></strong></h2>
                 <mat-form-field class="w-75" appearance="outline">
                     <mat-label>E-mail</mat-label>
-                    <input matInput placeholder="">
+                    <input formControlName="email" matInput placeholder="">
+                    <mat-error style="margin-top: -22px;">
+                        <p *ngIf="f['email'].errors && f['email'].errors['required']">Lütfen emailinizi giriniz.
+                        </p>
+                        <p *ngIf="f['email'].errors && f['email'].errors['email']">Lütfen email formatında giriniz.</p>
+                    </mat-error>
                     <mat-icon matPrefix>mail</mat-icon>
                 </mat-form-field>
                 <span class="mb-4"></span>
-                <button color="primary" class="mb-3"
-                    mat-raised-button><span translate>Send</span></button>
-    
-                    <button routerLink="/auth/login"  mat-raised-button class="mb-2"><span>Giriş Ekranı</span></button>
+                <div class="w-100" style="display: flex;
+justify-content: center;align-items: center;">
+                    <button (click)="sendMail()" [disabled]="loginForm.invalid"  color="primary" class="mb-2  w-25" mat-raised-button><span
+                            translate>Gönder</span></button>
+
+                    <div style="display: flex;
+    justify-content: flex-start;align-items: center;" class="w-50">
+                        <mat-form-field
+                            style="display: flex;align-items: center;justify-content: center;margin-left: 80px;"
+                            class="w-50" appearance="outline">
+                            <input readonly [value]="value" matInput>
+                            <mat-icon matPrefix>key</mat-icon>
+                        </mat-form-field>
+                        <button mat-icon-button [cdkCopyToClipboard]="value"><mat-icon>flip_to_front</mat-icon></button>
+                    </div>
+                </div>
+                <button routerLink="/auth/login" mat-raised-button class="mb-2 w-25"><span>Giriş Ekranı</span></button>
             </div>
         </form>
     </div>
