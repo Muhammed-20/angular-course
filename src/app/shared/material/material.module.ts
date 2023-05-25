@@ -29,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import {ClipboardModule} from '@angular/cdk/clipboard';
 
 
 
@@ -55,7 +56,8 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     MatSortModule,
     MatPaginatorModule,
     MatButtonToggleModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ClipboardModule
   ],
   exports:[
     LayoutModule,
@@ -86,7 +88,8 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     MatListModule,
     MatPaginatorModule,
     MatButtonToggleModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ClipboardModule
   ]
 })
 export class MaterialModule { }
