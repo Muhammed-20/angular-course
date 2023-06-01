@@ -1,21 +1,70 @@
 {
   "users": [
     {
-      "mail": "levent@gmail.com",
+      "mail": "muhammedaliaksit@gmail.com",
       "password": "Password1!",
       "id": 1
     },
     {
-      "mail": "mujhamemd@gmail.com",
-      "password": "Password",
+      "mail": "levent.koman@mobilehealth.ch",
+      "password": "Password1!",
       "id": 2
     }
   ],
-  "pass": [
+  "items": [
     {
-      "mail": "muhammedaliaksit",
-      "password": "123456",
+      "itemName": "Hayvan Çiftliği",
+      "itemPrice": "50",
+      "itemCat": "Kitap",
       "id": 1
+    },
+    {
+      "itemName": "Love ",
+      "itemPrice": "10",
+      "itemCat": "Bardak",
+      "id": 2
+    },
+    {
+      "itemName": "1984",
+      "itemPrice": "30",
+      "itemCat": "Kitap",
+      "id": 3
+    },
+    {
+      "itemName": "Hanımın Çiftliği",
+      "itemPrice": "50",
+      "itemCat": "Kitap",
+      "id": 4
+    },
+    {
+      "itemName": "iPhone 14 Pro Max ",
+      "itemPrice": "40000",
+      "itemCat": "Telefon",
+      "id": 5
+    },
+    {
+      "itemName": "iPhone 13 Pro Max ",
+      "itemPrice": "40000",
+      "itemCat": "Telefon",
+      "id": 6
+    },
+    {
+      "itemName": "Samsung Note 2 ",
+      "itemPrice": "40000",
+      "itemCat": "Telefon",
+      "id": 7
+    },
+    {
+      "itemName": "Xoami Poco ",
+      "itemPrice": "4000",
+      "itemCat": "Telefon",
+      "id": 8
+    },
+    {
+      "itemName": "Nutuk",
+      "itemPrice": "50",
+      "itemCat": "Kitap",
+      "id": 9
     }
   ]
 }

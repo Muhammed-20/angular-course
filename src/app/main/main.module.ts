@@ -8,22 +8,28 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { MaterialModule } from '../shared/material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { KatalogDirective } from '../shared/directives/katalog.directive';
+import { TrcurrencyPipe } from '../shared/pipes/tr-currency.pipe';
+
 
 
 @NgModule({
   declarations: [
     MainComponent,
     MainPageComponent,
-    MainHeaderComponent,
     MainContentComponent,
-    MainFooterComponent
+    KatalogDirective,
+    MainHeaderComponent,
+    TrcurrencyPipe
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MainFooterComponent,
   ]
 })
 export class MainModule { }

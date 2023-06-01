@@ -35,17 +35,23 @@ export class LoginComponent {
   }
   
   clickLogin(): void {
+    let succes;
+    let fail;
     this.users.forEach((user) => {
-
+    
       if((user.mail == this.loginForm.get(['email'])?.value) && user.password == this.loginForm.get(['password'])?.value) {
         this.snack.open('Başarılı bir şeklide giriş yapıldı.','kapat',{
           duration:3000,
           
         })
+        succes = new SpeechSynthesisUtterance('Başarılı bir şeklide giriş yapıldı');
+        succes.lang = 'tr';
+        speechSynthesis.speak(succes);
         this.router.navigate(['/main/main-page']); 
 
       } else {
         this.snack.open('Mail ve şifrenizi tekrar kontrol ediniz.','kapat',{
+
           duration:3000,
           
         })

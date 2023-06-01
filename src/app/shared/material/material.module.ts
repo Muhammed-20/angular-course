@@ -57,7 +57,8 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     MatPaginatorModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
-    ClipboardModule
+    ClipboardModule,
+    
   ],
   exports:[
     LayoutModule,
