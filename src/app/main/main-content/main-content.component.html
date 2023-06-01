@@ -1,3 +1,60 @@
-<div style="height: 80vh;width: 100%;background-color: #90D0C9;display: flex;justify-content: center;align-items: center;font-size: 35px;">
-{{data}}
+<div style="height: 80vh;width: 100%;display: flex;justify-content: center;align-items: center;font-size: 35px;">
+    <!-- {{data}} -->
+    <div style="width: 50%;background-color: rgb(213, 191, 233);height: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+        
+        <form [formGroup]="loginForm" style="    display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;">
+            <mat-form-field style="width: 400px;" appearance="outline">
+                <mat-label>Ürün Adı</mat-label>
+                <input formControlName="itemName" matInput placeholder="">
+                <mat-error style="margin-top: -22px;">
+                    <p *ngIf="f['itemName'].errors && f['itemName'].errors['required']">Lütfen ürün adı giriniz.
+                    </p>
+                </mat-error>
+                <mat-icon matPrefix>assignment</mat-icon>
+            </mat-form-field>
+            <mat-form-field style="width: 400px;" appearance="outline">
+                <mat-label>Ürün Fiyatı</mat-label>
+                <input formControlName="itemPrice" matInput placeholder="">
+                <mat-error style="margin-top: -22px;">
+                    <p *ngIf="f['itemPrice'].errors && f['itemPrice'].errors['required']">Lütfen ürün fiyatı giriniz.
+                    </p>
+                </mat-error>
+                <mat-icon matPrefix>payment</mat-icon>
+            </mat-form-field>
+            <mat-form-field style="width: 400px;" appearance="outline">
+                <mat-label>Ürün Kategorisi</mat-label>
+                <input formControlName="itemCat" matInput placeholder="">
+                <mat-error style="margin-top: -22px;">
+                    <p *ngIf="f['itemPrice'].errors && f['itemPrice'].errors['required']">Lütfen ürün kategorisi
+                        giriniz.
+                    </p>
+                </mat-error>
+                <mat-icon matPrefix>loyalty</mat-icon>
+            </mat-form-field>
+            <button (click)="listele()" [disabled]="loginForm.invalid" mat-raised-button
+                class="mb-2 w-25"><span>Listele</span></button>
+        </form>
+        
+        <div style="font-size: 10px;">
+            {{data}}
+        </div>
+    </div>
+
+    <div  style="width: 50%;height: 100%;background-color: rgb(195, 239, 234);display: flex;flex-wrap: wrap;    overflow-y: auto;">
+
+
+        <mat-card style="width: 30.5%;height:25%;margin-left: 2%;margin-top: 2%;" *ngFor="let item of items">
+
+            <mat-card-header>
+                <mat-card-title appKatalog >{{ item.itemName }}</mat-card-title>
+                <mat-card-subtitle>{{item.itemPrice  | trCurrency: "₺"}}</mat-card-subtitle>
+                <mat-card-subtitle>{{item.itemCat}}</mat-card-subtitle>
+            </mat-card-header>
+
+        </mat-card>
+
+    </div>
 </div>
