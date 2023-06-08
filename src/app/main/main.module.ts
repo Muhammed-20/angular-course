@@ -11,6 +11,7 @@ import { MaterialModule } from '../shared/material/material.module';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { KatalogDirective } from '../shared/directives/katalog.directive';
 import { TrcurrencyPipe } from '../shared/pipes/tr-currency.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -30,6 +31,7 @@ import { TrcurrencyPipe } from '../shared/pipes/tr-currency.pipe';
     FormsModule,
     ReactiveFormsModule,
     MainFooterComponent,
+    SharedModule
   ]
 })
 export class MainModule { }

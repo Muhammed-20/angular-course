@@ -1,0 +1,9 @@
+<mat-form-field style="color: rgb(0, 0, 0);" appearance="outline">
+    <mat-label translate>changeLanguage</mat-label>
+    <mat-select #language (selectionChange)="onChange(language.value)">
+        <mat-option *ngFor="let lang of translateService.getLangs()" [value]="lang">{{
+            lang | translate
+            }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

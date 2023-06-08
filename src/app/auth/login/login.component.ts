@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -19,16 +20,21 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private snack:MatSnackBar,
-    private auth:AuthService
+    private auth:AuthService,
+    public translateService: TranslateService
   ) 
   { 
+
+    this.translateService.addLangs(["tr", "en"]);
     this.auth.getUsers().subscribe((data) => {
       this.users = data
       console.log(this.users)
     })
   }
 
-
+  public onChange(selectedLanguage: string): void {
+    this.translateService.use(selectedLanguage)
+  }
 
   get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls
