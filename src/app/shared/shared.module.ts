@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClient} from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir diiznde json tanımlamamk istersek 
   return new TranslateHttpLoader(http);
@@ -20,6 +21,7 @@ export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir 
     CommonModule,
     SharedRoutingModule,
     MaterialModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -31,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir 
   ],
   exports: [
     LanguageComponent,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ],
   providers:[TranslateService]
 })

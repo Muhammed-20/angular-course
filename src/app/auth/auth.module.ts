@@ -9,9 +9,6 @@ import { MaterialModule } from '../shared/material/material.module';
 import { ReactiveFormsModule ,FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SharedModule } from '../shared/shared.module';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
 
 
 
