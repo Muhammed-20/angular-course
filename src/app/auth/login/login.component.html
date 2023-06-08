@@ -3,17 +3,19 @@
         <form [formGroup]="loginForm" class="d-flex justify-content-center">
             <div style="width: 50%; height: 100vh;background-color:#7DCEA0; opacity: 0.95;box-shadow: 10px 10px 50px 5px rgb(255, 255, 255),-10px 10px 50px 5px rgb(255, 255, 255); border-radius: 10px;"
                 class="d-flex flex-column justify-content-center align-items-center">
+                <app-language style="position: relative;
+                top: 70px;"></app-language>
                 <img class="img-fluid" width="300px" style="background-color:	#7DCEA0" src="assets/logo.png"
                     alt="Sana Şifa">
                 <!--  <div class="d-flex flex-column align-items-center " style="border-radius: 3px;border: 1px solid  rgb(255, 255, 255); padding: 10px; background-color: rgb(164, 199, 180);"> -->
-                <h2 class="mb-3"><strong><b>Giriş</b></strong></h2>
+                <h2 class="mb-3" ><strong><b translate>giris</b></strong></h2>
                 <mat-form-field style="width: 400px;" appearance="outline">
                     <mat-label>E-mail</mat-label>
                     <input formControlName="email" matInput placeholder="">
                     <mat-error style="margin-top: -22px;">
-                        <p *ngIf="f['email'].errors && f['email'].errors['required']">Lütfen emailinizi giriniz.
+                        <p *ngIf="f['email'].errors && f['email'].errors['required']" translate>LFTGRN
                         </p>
-                        <p *ngIf="f['email'].errors && f['email'].errors['email']">Lütfen email formatında giriniz.</p>
+                        <p *ngIf="f['email'].errors && f['email'].errors['email']">LFTMFG</p>
                     </mat-error>
                     <mat-icon matPrefix>mail</mat-icon>
                 </mat-form-field>

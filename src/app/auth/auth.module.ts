@@ -6,9 +6,12 @@ import { AuthComponent } from './auth/auth.component';
 import { ForgotPassswordComponent } from './forgot-passsword/forgot-passsword.component';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from '../shared/material/material.module';
-import { MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule ,FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { SharedModule } from '../shared/shared.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -24,7 +27,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     AuthRoutingModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class AuthModule { }
