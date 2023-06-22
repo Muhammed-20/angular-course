@@ -8,6 +8,8 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { HttpClient} from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CikisModalComponent } from './component/modals/cikis-modal/cikis-modal.component';
+import { UrunEditModalComponent } from './component/modals/urun-edit-modal/urun-edit-modal.component';
 
 export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir diiznde json tanımlamamk istersek 
   return new TranslateHttpLoader(http);
@@ -15,7 +17,9 @@ export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir 
 
 @NgModule({
   declarations: [
-    LanguageComponent
+    LanguageComponent,
+    CikisModalComponent,
+    UrunEditModalComponent
   ],
   imports: [
     CommonModule,

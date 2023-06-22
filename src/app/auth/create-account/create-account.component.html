@@ -5,6 +5,15 @@
                 class="d-flex flex-column justify-content-center align-items-center">
                 <img class="img-fluid" width="300px" style="background-color:	#7DCEA0" src="assets/logo.png"
                     alt="Sana Şifa">
+
+
+                    <mat-form-field>
+                        <mat-label>Toppings</mat-label>
+                        <mat-select formControlName="role" >
+
+                          <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
                 <!--  <div class="d-flex flex-column align-items-center " style="border-radius: 3px;border: 1px solid  rgb(255, 255, 255); padding: 10px; background-color: rgb(164, 199, 180);"> -->
                 <h2 class="mb-3"><strong><b>Giriş</b></strong></h2>
                 <mat-form-field style="width: 400px;" appearance="outline">

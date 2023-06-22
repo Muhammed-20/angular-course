@@ -3,23 +3,39 @@
     {
       "mail": "muhammedaliaksit@gmail.com",
       "password": "Password1!",
+      "role": "admin",
       "id": 1
     },
     {
-      "mail": "levent.koman@mobilehealth.ch",
+      "mail": "leventkoman@gmail.com",
       "password": "Password1!",
+      "role": "user",
       "id": 2
+    },
+    {
+      "mail": "stephan@gmail.com",
+      "password": "Password1!",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "mail": "ali@gmail.com",
+      "password": "Password1!",
+      "role": "user",
+      "id": 4
     }
   ],
   "items": [
     {
-      "itemName": "Hayvan Çiftliği",
+      "itemId": 1,
+      "itemName": "Hayvan Çifliği",
       "itemPrice": "50",
-      "itemCat": "Kitap",
+      "itemCat": "book",
       "id": 1
     },
     {
-      "itemName": "Love ",
+      "itemId": 2,
+      "itemName": "Love me",
       "itemPrice": "10",
       "itemCat": "Bardak",
       "id": 2
@@ -65,6 +81,19 @@
       "itemPrice": "50",
       "itemCat": "Kitap",
       "id": 9
+    },
+    {
+      "itemName": "Şeker Portakalı",
+      "itemPrice": "10",
+      "itemCat": "Kitap",
+      "id": 10
+    },
+    {
+      "itemId": 11,
+      "itemName": "Kahve Bardağı",
+      "itemPrice": "23",
+      "itemCat": "İçecek",
+      "id": 11
     }
   ]
 }
