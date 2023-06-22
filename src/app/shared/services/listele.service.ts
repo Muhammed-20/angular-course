@@ -16,4 +16,7 @@ export class ListeleService extends BaseService{
   public getItems() {
     return this.base.getReq('/items')
   }
+  public putItems(Obj:any) {
+    return this.base.putReq(`/items/${Obj.itemId}`,Obj)
+  }
 }

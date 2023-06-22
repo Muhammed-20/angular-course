@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginComponent {
   public users:Array<any> = [];
+
   public loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)])
@@ -50,6 +51,7 @@ export class LoginComponent {
           duration:3000,
           
         })
+        localStorage.setItem('role',user.role)
         succes = new SpeechSynthesisUtterance('Başarılı bir şeklide giriş yapıldı');
         succes.lang = 'tr';
         speechSynthesis.speak(succes);

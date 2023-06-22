@@ -1,0 +1,34 @@
+<form [formGroup]="loginForm" style="    display: flex;padding-top: 50px; 
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;">
+    <mat-form-field style="width: 400px;" appearance="outline">
+        <mat-label>Ürün Adı</mat-label>
+        <input [(ngModel)]="itemName" formControlName="itemName" matInput placeholder="">
+        <mat-error style="margin-top: -22px;">
+            <p *ngIf="f['itemName'].errors && f['itemName'].errors['required']">Lütfen ürün adı giriniz.
+            </p>
+        </mat-error>
+        <mat-icon matPrefix>assignment</mat-icon>
+    </mat-form-field>
+    <mat-form-field style="width: 400px;" appearance="outline">
+        <mat-label>Ürün Fiyatı</mat-label>
+        <input [(ngModel)]="itemPrice" formControlName="itemPrice" matInput placeholder="">
+        <mat-error style="margin-top: -22px;">
+            <p *ngIf="f['itemPrice'].errors && f['itemPrice'].errors['required']">Lütfen ürün fiyatı giriniz.
+            </p>
+        </mat-error>
+        <mat-icon matPrefix>payment</mat-icon>
+    </mat-form-field>
+    <mat-form-field style="width: 400px;" appearance="outline">
+        <mat-label>Ürün Kategorisi</mat-label>
+        <input [(ngModel)]="itemCat" formControlName="itemCat" matInput placeholder="">
+        <mat-error style="margin-top: -22px;">
+            <p *ngIf="f['itemPrice'].errors && f['itemPrice'].errors['required']">Lütfen ürün kategorisi
+                giriniz.
+            </p>
+        </mat-error>
+        <mat-icon matPrefix>loyalty</mat-icon>
+    </mat-form-field>
+    <button (click)="update()" [disabled]="loginForm.invalid" mat-raised-button class="mb-2 w-25"><span>Güncelle</span></button>
+</form>

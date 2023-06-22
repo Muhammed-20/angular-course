@@ -43,13 +43,15 @@
                 mat-raised-button color="primary">
                 Sign up
             </button> -->
-            <button routerLink="/auth/login" mat-icon-button style="width: 30px; "  [matTooltip]="logout">
+            <button (click)="cikis()"  mat-icon-button style="width: 30px; "  [matTooltip]="logout">
         
                 <mat-icon style="width: 30px;    position: relative;
                 left: -12px;">
                     input
                 </mat-icon>
             </button>
+
+            <span>{{role}}</span>
         </div>
 
     </div>

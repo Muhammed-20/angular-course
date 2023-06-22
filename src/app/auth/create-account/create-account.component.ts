@@ -12,38 +12,41 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class CreateAccountComponent {
   constructor(
     private router: Router,
-    private snack:MatSnackBar,
-    private auth:AuthService
-  ) 
-  { 
+    private snack: MatSnackBar,
+    private auth: AuthService
+  ) {
   }
 
+  roles: string[] = ['admin', 'user'];
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)])
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    role: new FormControl('', [Validators.required])
   })
 
   get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls
   }
-  
+
   createAccount(): void {
-    const createAccount:Object = {
-      mail:this.loginForm.get(['email'])?.value,
-      password:this.loginForm.get(['password'])?.value,
+    console.log();
+    const createAccount: Object = {
+      mail: this.loginForm.get(['email'])?.value,
+      password: this.loginForm.get(['password'])?.value,
+      role: this.loginForm.get(['role'])?.value
     }
 
     this.auth.postUsers(createAccount).subscribe((data) => {
-      this.snack.open('Başarılı bir şeklide kayıt yapıldı','kapat',{
-        duration:3000,
+      this.snack.open('Başarılı bir şeklide kayıt yapıldı', 'kapat', {
+        duration: 3000,
       })
-    },(err) => {
-      this.snack.open('Başarısız kayıt tekrar deneyiniz.','kapat',{
-        duration:3000,
+    }, (err) => {
+      this.snack.open('Başarısız kayıt tekrar deneyiniz.', 'kapat', {
+        duration: 3000,
       })
     })
 
 
-     this.router.navigate(['/auth/login']); 
+    this.router.navigate(['/auth/login']);
   }
 }

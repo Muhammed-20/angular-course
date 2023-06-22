@@ -44,17 +44,13 @@
     </div>
 
     <div  style="width: 50%;height: 100%;background-color: rgb(195, 239, 234);display: flex;flex-wrap: wrap;    overflow-y: auto;">
-
-
         <mat-card style="width: 30.5%;height:25%;margin-left: 2%;margin-top: 2%;" *ngFor="let item of items">
-
-            <mat-card-header>
-                <mat-card-title appKatalog >{{ item.itemName }}</mat-card-title>
-                <mat-card-subtitle>{{item.itemPrice  | trCurrency: "₺"}}</mat-card-subtitle>
-                <mat-card-subtitle>{{item.itemCat}}</mat-card-subtitle>
-            </mat-card-header>
-
+            <div style="display: flex;justify-content: space-between;align-items: center;padding-left: 10px;">
+                <mat-card-title >{{ item.itemName }} </mat-card-title>
+                <button *ngIf="role == 'admin'" (click)="edit(item)" mat-icon-button><mat-icon>edit</mat-icon></button>
+            </div>
+                <mat-card-subtitle style="padding-left: 10px;">{{item.itemPrice  | trCurrency: "₺"}}</mat-card-subtitle>
+                <mat-card-subtitle style="padding-left: 10px;">{{item.itemCat}}</mat-card-subtitle> 
         </mat-card>
-
     </div>
 </div>
