@@ -1,0 +1,101 @@
+<div class="background">
+    <form [formGroup]="feedbackForm" (ngSubmit)="submitfeedback()" class="d-flex justify-content-center">
+        <div style="padding-top: 50px; width: 50%; height: 100vh;background-color:#7DCEA0; opacity: 0.95;box-shadow: 10px 10px 50px 5px rgb(255, 255, 255),-10px 10px 50px 5px rgb(255, 255, 255); border-radius: 10px;"
+            class="d-flex flex-column justify-content-start align-items-center ">
+
+            <!-- Hemen alttaki div için justify-content-evenly yapılmasına rağmen neden elementlerin buna göre ayarlanmadığını sor -->
+            <!-- Bu div yerine table kullanımı daha mantıklı olabilir -->
+            <div class="d-flex justify-content-evenly">
+                <mat-form-field style="width: 300px; padding-right: 5px;" appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input formControlName="name" matInput placeholder="">
+                    <mat-error style="margin-top: -22px;">
+                        <p *ngIf="f['name'].errors && f['name'].errors['required']" translate>Name field can not be left
+                            blank
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 300px; padding-left: 5px" appearance="outline">
+                    <mat-label>Surname</mat-label>
+                    <input formControlName="surname" matInput placeholder="">
+                    <mat-error style="margin-top: -22px;">
+                        <p *ngIf="f['surname'].errors && f['surname'].errors['required']" translate>Surame field can not
+                            be left blank
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="d-flex justify-content-evenly">
+                <mat-form-field style="width: 300px; padding-right: 5px;" appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input formControlName="email" matInput placeholder="">
+                    <mat-error style="margin-top: -22px;">
+                        <p *ngIf="f['email'].errors && f['email'].errors['required']" translate>E-mail field can not be
+                            left blank
+                        </p>
+                        <p *ngIf="f['email'].errors && f['email'].errors['email']">E-mail field must be in e-mail format
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Telefon numarası yazıldıktan sonra bacspace'e basılınca son 2 rakam hariç hiçbir rakamı silmiyor. ChatGPT yardımıyla backspace'i diğer tuşlaran ayıran kodu yazdım fakat bu sefer rakam sildikçe yerine parantez ekledi ayrıca ekranda telefon numarası olması gerektiği hanede görünmesine rağmen eğer fazladan tuşa basılırsa bir tane daha rakam ekliyor. Localstorage'den veriyi alınca anlaşılıyor -->
+                <mat-form-field style="width: 300px; padding-left: 5px" appearance="outline">
+                    <mat-label>Phone number</mat-label>
+                    <span style="margin-left: 7px;" matPrefix>+90 &nbsp;</span>
+                    <input type="tel" formControlName="phoneNumber" matInput placeholder="" appPhoneNumberFormat>
+                </mat-form-field>
+            </div>
+            <!-- section'ı mat-form-field içinde kullanamadığım için border özelliklerini style olarak ekledim fakat mat-form-field'ları altındaki elemanlardan ayıran marginin nereden geldiğini bulamadım -->
+            <section
+                style="color: rgba(0, 0, 0, 0.60); width: 600px; border: 1px solid rgba(0, 0, 0, 0.33); border-radius: 4px; padding: 8px; display: inline-block; margin-bottom: 20px;">
+                <h4>Select your gender</h4>
+                <div class="d-flex justify-content-start">
+                    <mat-radio-group formControlName="gender">
+                        <mat-radio-button value="male">Male</mat-radio-button>
+                        <mat-radio-button value="female">Female</mat-radio-button>
+                        <mat-radio-button value="dontWanttoSpecify">I do not want to specify</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </section>
+
+            <mat-form-field style="width: 600px;" appearance="outline">
+                <mat-label>Comment</mat-label>
+                <textarea rows="8" formControlName="comment" matInput
+                    placeholder="Share your opinions with us"></textarea>
+            </mat-form-field>
+
+            <div style="width: 600px;" class="d-flex">
+                <mat-form-field style="width: 300px;" appearance="outline">
+                    <mat-label>Where do you hear about us</mat-label>
+                    <mat-select disableRipple formControlName="reference">
+                        <mat-option value="1">Social Media</mat-option>
+                        <mat-option value="2">Friend Suggestion</mat-option>
+                        <mat-option value="3">TV</mat-option>
+                        <mat-option value="4">Find Myself</mat-option>
+                        <mat-option value="5">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <button
+                    style="border: 3px solid rgba(0, 0, 0, 0.33); border-radius: 50%; width: 150px; margin-left: 150px; height: 56px; background-color:#7DCEA0; opacity: 1;"
+                    mat-stroked-button color="primary" type="submit" [disabled]="feedbackForm.invalid">send</button>
+            </div>
+        </div>
+
+        <button
+                    style="height: 25px; position: relative; left: -124px; top: 700px; border-radius: 5px; background-color:#7DCEA0; "
+                    (click)="navigateToFeedbackDisplay()">show feedbacks
+        </button>
+
+    </form>
+    
+    <!-- Alt taraftaki elemanlar çalışma sırasında yaptıklarımı teste tabi tutmak için. işin bitince silmeyi unutma -->
+    <div style="background-color: black; color: wheat; padding: 30px;">
+        <button (click)="checkClick()">check button</button>
+        <p *ngFor="let parsedValue of parsedFeedbackValues; let i = index">Stored Data:{{ i + 1 }}: <span *ngFor="let value of parsedValue | keyvalue"> {{ value.value | json }} </span></p>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
