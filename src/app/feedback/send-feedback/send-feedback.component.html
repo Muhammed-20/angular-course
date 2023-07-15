@@ -90,12 +90,5 @@
         </button>
 
     </form>
-    
-    <!-- Alt taraftaki elemanlar çalışma sırasında yaptıklarımı teste tabi tutmak için. işin bitince silmeyi unutma -->
-    <div style="background-color: black; color: wheat; padding: 30px;">
-        <button (click)="checkClick()">check button</button>
-        <p *ngFor="let parsedValue of parsedFeedbackValues; let i = index">Stored Data:{{ i + 1 }}: <span *ngFor="let value of parsedValue | keyvalue"> {{ value.value | json }} </span></p>
-    </div>
 </div>
 
-<router-outlet></router-outlet>

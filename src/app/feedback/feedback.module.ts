@@ -7,6 +7,7 @@ import { MaterialModule } from '../shared/material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FeedbackRoutingModule } from './feedback-routing.module';
 import { RouterModule } from '@angular/router';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     DisplayFeedbackComponent,
     SendFeedbackComponent,
+    FeedbackComponent,
   ],
   imports: [
     CommonModule,

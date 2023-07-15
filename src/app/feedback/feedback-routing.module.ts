@@ -4,12 +4,8 @@ import { DisplayFeedbackComponent } from './display-feedback/display-feedback.co
 import { SendFeedbackComponent } from './send-feedback/send-feedback.component';
 
 const routes: Routes = [
-  {
-    path: '', component: SendFeedbackComponent,
-    children: [
-      { path: 'display', component: DisplayFeedbackComponent }
-    ]
-  }
+  { path: '', component: SendFeedbackComponent },
+  { path: 'display', component: DisplayFeedbackComponent }
 ];
 
 @NgModule({

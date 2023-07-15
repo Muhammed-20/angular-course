@@ -24,7 +24,6 @@ export class SendFeedbackComponent {
     public router: Router
   ) {}
 
-  parsedFeedbackValues: any[] = [];
   valueKey: number = 1;    // şimdilik geçici bir çözüm olarak bir değişkenle localstorage keylerini kontrol altına aldım. Daha verimli bir yolunu araştır
 
   get f(): { [key: string]: AbstractControl } {
@@ -36,17 +35,6 @@ export class SendFeedbackComponent {
     const key = this.valueKey.toString();
     window.localStorage.setItem(key, JSON.stringify(formValues));
     this.valueKey++
-  }
-
-  checkClick() {  // Bu fonksiyon ile local storage'deki veriyi dönüyoruz. ilerleyen zamanda bu fonksiyonu veriyi tabloya dökmek için kullanacağız!!
-    let valueKey: any;
-    for (let i = 1; i < 100; i++) {  // for döngüsüyle localstorage'deki veriyi döndürebiliyorum fakat şimdilik döngü 100'e kadar dönüyor. storage'daki veri sayısına göre dönmeyi öğren!!!
-      valueKey = i.toString();
-      const storedFeedbackValues = localStorage.getItem(valueKey)
-      if (storedFeedbackValues) {
-        this.parsedFeedbackValues.push(JSON.parse(storedFeedbackValues));
-      }
-    }
   }
 
   navigateToFeedbackDisplay() {
