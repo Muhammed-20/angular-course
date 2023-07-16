@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FeedbackRoutingModule } from './feedback-routing.module';
 import { RouterModule } from '@angular/router';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -25,6 +26,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     SharedModule,
     FeedbackRoutingModule,
     RouterModule,
+    MatIconModule,
   ]
 })
 export class FeedbackModule { }

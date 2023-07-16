@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class SendFeedbackComponent {
 
-  public feedbackForm = new FormGroup({   // deneme sırasında sürekli form doldurmamak için şimdilik değer atadım işin bitince silmeyi unutma
-    name: new FormControl('Yasin', Validators.required),
-    surname: new FormControl('Seden', Validators.required),
+  public feedbackForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required),
     comment: new FormControl(),
-    email: new FormControl('yasinseden@yasin.com', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     phoneNumber: new FormControl(),
     gender: new FormControl('male', [Validators.required]),
-    reference: new FormControl('')   // referans çıktısı sayı olarak olacak. Kullanırken dönen sayının karşılığı değeri döndürmeyi unutma
+    reference: new FormControl('')
   })
 
   constructor(
@@ -34,7 +34,8 @@ export class SendFeedbackComponent {
     const formValues = this.feedbackForm.value;
     const key = this.valueKey.toString();
     window.localStorage.setItem(key, JSON.stringify(formValues));
-    this.valueKey++
+    this.valueKey++;
+    this.feedbackForm.reset()
   }
 
   navigateToFeedbackDisplay() {
