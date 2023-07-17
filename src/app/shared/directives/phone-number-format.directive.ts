@@ -21,7 +21,7 @@ export class PhoneNumberFormatDirective {
     const secondPart = digitsOnly.slice(6, 8);
     const lastPart = digitsOnly.slice(8, 10);
 
-    return `(${areaCode}) ${firstPart} ${secondPart} ${lastPart}`;
+    return `${areaCode} ${firstPart} ${secondPart} ${lastPart}`;
   }
 
 }

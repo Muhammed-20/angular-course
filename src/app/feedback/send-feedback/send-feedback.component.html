@@ -43,7 +43,7 @@
                 <!-- Telefon numarası yazıldıktan sonra bacspace'e basılınca son 2 rakam hariç hiçbir rakamı silmiyor. ChatGPT yardımıyla backspace'i diğer tuşlaran ayıran kodu yazdım fakat bu sefer rakam sildikçe yerine parantez ekledi ayrıca ekranda telefon numarası olması gerektiği hanede görünmesine rağmen eğer fazladan tuşa basılırsa bir tane daha rakam ekliyor. Localstorage'den veriyi alınca anlaşılıyor -->
                 <mat-form-field style="width: 300px; padding-left: 5px" appearance="outline">
                     <mat-label>Phone number</mat-label>
-                    <span style="margin-left: 7px;" matPrefix>+90 &nbsp;</span>
+                    <span style="margin-left: 7px;" matPrefix>+90 <!-- &nbsp; ->  +90'dan sonra boşluk bırakmak için kullanılıyor --></span>
                     <input type="tel" formControlName="phoneNumber" matInput placeholder="" appPhoneNumberFormat>
                 </mat-form-field>
             </div>
