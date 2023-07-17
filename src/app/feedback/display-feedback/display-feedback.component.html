@@ -1,0 +1,57 @@
+<div class="background">
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; min-height: 100vh;">
+            <mat-card style="width: calc(50% - 4px); margin: 2px; opacity: 0.90; background-color: #7DCEA0;"
+                *ngFor="let item of parsedFeedbackValues">
+                <!-- mat-card-header için justify-content: space-between olmasına rağmen en baştaki element kapsayıcının başlangıç noktasına yaslanmıyor. Sebebini öğren -->
+                <mat-card-header style="padding-left: 0; display: flex; justify-content: space-between;">
+                    <div style="margin-left: 0; display: flex; flex-direction: column;">
+                        <span class="py-1">
+                            <strong>{{ item.name }} {{ item.surname }}</strong>
+                        </span>
+                        <span class="py-1">
+                            {{ item.email }}
+                        </span>
+                        <span class="py-1">
+                            0{{ item.phoneNumber }}
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; align-items: center;">
+                        <div style="margin-right: 25px; align-self: baseline;">
+                            <ng-container [ngSwitch]="item.gender">
+                                <div *ngSwitchCase="'male'" style="width: 35px; height: 35px; margin-bottom: 5px;">
+                                    <img src="assets\svgs\gender-male-icon.svg" width="35px" height="35px">
+                                </div>
+                                <div *ngSwitchCase="'female'" style="width: 35px; height: 35px; margin-bottom: 5px;">
+                                    <img src="assets\svgs\gender-female-icon.svg" width="35px" height="35px">
+                                </div>
+                                <div *ngSwitchDefault
+                                    style="display: flex; width: 35px; height: 35px; margin-bottom: 5px; border-radius: 50%; border: 2px solid black; justify-content: center; align-items: center;">
+                                    <p style="font-size: 15px; margin: 0;"><strong>NS</strong></p>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <!-- Görselleri svg olarak kullanmanın avantajları nedir? Neden svg türünde dosyalara ihtiyaç duyarız? Araştır!! -->
+                        <ng-container [ngSwitch]="item.gender">
+                            <div *ngSwitchCase="'male'"
+                                style="display: flex; width: 75px; height: 75px; border-radius: 50%;">
+                                <img src="assets\svgs\gender-male-svgrepo-com.svg" width="75px" height="75px">
+                            </div>
+                            <div *ngSwitchCase="'female'"
+                                style="display: flex; width: 75px; height: 75px; border-radius: 50%;">
+                                <img src="assets\svgs\gender-female-svgrepo-com.svg" width="75px" height="75px">
+                            </div>
+                            <div *ngSwitchDefault
+                                style="display: flex; width: 75px; height: 75px; border-radius: 50%; border: 2px solid black; justify-content: center; align-items: center;">
+                                <p style="font-size: 45px; margin: 0;"><strong>PP</strong></p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </mat-card-header>
+                <mat-card-content class="mt-3 py-2 d-flex flex-column"><span><strong>Comment:</strong></span> <span>{{
+                        item.comment }}</span> </mat-card-content>
+                <mat-card-footer></mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

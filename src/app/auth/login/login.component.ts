@@ -69,4 +69,8 @@ export class LoginComponent {
     
   }
 
+  navigateToFeedback() {
+    this.router.navigate(['/feedback']);
+  }
+  
 }

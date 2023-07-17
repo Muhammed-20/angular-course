@@ -31,7 +31,6 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     MainFooterComponent,
-    SharedModule
   ]
 })
 export class MainModule { }

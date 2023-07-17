@@ -11,6 +11,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'feedback',
+    loadChildren: (): any => import('./feedback/feedback.module').then((m: any) => m.FeedbackModule),
+  },
+
+  {
     path: '',
     redirectTo: 'auth/login',
     pathMatch: 'full',

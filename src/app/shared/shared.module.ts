@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CikisModalComponent } from './component/modals/cikis-modal/cikis-modal.component';
 import { UrunEditModalComponent } from './component/modals/urun-edit-modal/urun-edit-modal.component';
+import { PhoneNumberFormatDirective } from './directives/phone-number-format.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir diiznde json tanımlamamk istersek 
   return new TranslateHttpLoader(http);
@@ -19,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir 
   declarations: [
     LanguageComponent,
     CikisModalComponent,
-    UrunEditModalComponent
+    UrunEditModalComponent,
+    PhoneNumberFormatDirective
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {      /// Eğer başka bir 
   exports: [
     LanguageComponent,
     TranslateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PhoneNumberFormatDirective
   ],
   providers:[TranslateService]
 })
